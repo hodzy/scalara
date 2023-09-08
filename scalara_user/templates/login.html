@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+<!-- <link rel="stylesheet" href={% static "css/style.css" %}> -->
+<!-- <link rel="stylesheet" href="{% static 'export_datasets/filter_datasets.css' %}"> -->
+<link rel="stylesheet" href="{% static 'homepage/landing_page.css' %}">
+
+<title>Scalara Search</title>
+{% endblock %}
+
+{% block content%}
+    <p style="margin: 1vw 10vw;">If log-in is successful, it will redirect to the upload page</p>
+    <form method="post" style="margin: 1vw 10vw;">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+{%endblock%}
+{% block rest %}
+
+{% endblock%}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+<!-- <link rel="stylesheet" href={% static "css/style.css" %}> -->
+<!-- <link rel="stylesheet" href="{% static 'export_datasets/filter_datasets.css' %}"> -->
+<link rel="stylesheet" href="{% static 'homepage/landing_page.css' %}">
+
+<title>Scalara Search</title>
+{% endblock %}
+
+{% block content%}
+    <p style="margin: 1vw 20vw;">Click on file name to Download the file you need</p>
+    <form method="post" style="margin: 1vw 20vw;">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    <table style="margin: 1% 20%;">
+        <thead>
+            <tr>
+                <th style="width: 15vw;">Datei Name</th>
+                <th style="width: 15vw;">Ersteller</th>
+                <th style="width: 15vw;">Name</th>
+                <th style="width: 15vw;">Benutzer</th>
+                <th style="width: 15vw;">Other</th>
+              </tr>
+        </thead>
+        <tbody>
+            {% for item in metadataItems %}
+                <tr>
+                    <td style="width: 15vw;"><a target="_blank" class="btn btn-primary" href="{% url 'download' file_key=item.file_key %}">{{item.file_key}}</a></td>
+                    <td style="width: 15vw;">{{item.ersteller}}</td>
+                    <td style="width: 15vw;">{{item.name}}</td>
+                    <td style="width: 15vw;">{{item.benutzer}}</td>
+                    <td style="width: 15vw;">{{item.other}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{%endblock%}
+{% block rest %}
+
+{% endblock%}

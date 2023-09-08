@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: 821639937264.dkr.ecr.eu-central-1.amazonaws.com/devops_task:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
+
+        env:
+          - name: allowed_host
+            value: "192.168.49.53"
+          - name: storage_bucket_name
+            value: "aufgabe-hady"
+          

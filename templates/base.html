@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% block header %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="{% url 'upload' %}">Scalara</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                      </li>
+                      {% if username %}
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="{% url 'upload' %}">Upload</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'search' %}">Search</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                      {% endif %}
+                      <li class="nav-item">
+                        <a style="pointer-events: none; display: inline-block;" class="nav-link" href="{% url 'search' %}">{{ username|default:"Not Logged In" }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item footer-link"><a href="{% url 'login' %}" class="nav-link px-2 text-muted">Login</a>
+              </li>  
+              {% if username %}
+                <li class="nav-item footer-link"><a href="{% url 'upload' %}" class="nav-link px-2 text-muted">Upload</a>
+                  </li>
+                  <li class="nav-item footer-link"><a href="{% url 'search' %}"
+                          class="nav-link px-2 text-muted">Search</a></li>
+                          
+                  <li class="nav-item footer-link"><a href="{% url 'logout' %}"
+                          class="nav-link px-2 text-muted">Logout</a></li>
+              {% endif %}
+            </ul>
+            <p class="text-center text-muted">© 2023 Scalara</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+{% block rest %}
+{% endblock %}
+
+</html>

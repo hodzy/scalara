@@ -1,0 +1,254 @@
+html {
+    font-size: 16px;
+    height: 100%;
+  }
+  
+  body {
+    padding-top: 75px;
+    min-height: 100%;
+  }
+  
+  .nav-link {
+    border-radius: 20px !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* margin: 5px 7px !important; */
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: black !important;
+  }
+  
+  .container-fluid {
+    margin: 20px !important;
+  }
+  
+  .navbar-toggler {
+    margin-right: 20px !important;
+  }
+  
+  .navbar {
+    height: 75px;
+    z-index: 1000;
+    /* background-color: #a9e5ea !important; */
+  }
+  
+  @media (min-width: 992px) {
+    #brand {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+  
+      /** Use this rule if the tag has a parent with specific height */
+    }
+    .nav-line {
+      display: none;
+    }
+  
+    .nav-link {
+      padding: 0.4rem 0.7rem !important;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .nav-item {
+      width: parent;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+  
+    .navbar-nav {
+      padding: 10px 0;
+      background-color: #f8f9fa;
+    }
+  
+    .fade_rule {
+      height: 1px;
+      background-color: #f8f9fa;
+      width: 100vw;
+      margin: 0 auto;
+      background-image: linear-gradient(
+        left,
+        #f8f9fa 2%,
+        #e6e6e6 50%,
+        #f8f9fa 98%
+      );
+      background-image: -o-linear-gradient(
+        left,
+        #f8f9fa 2%,
+        #e6e6e6 50%,
+        #f8f9fa 98%
+      );
+      background-image: -moz-linear-gradient(
+        left,
+        #f8f9fa 2%,
+        #e6e6e6 50%,
+        #f8f9fa 98%
+      );
+      background-image: -webkit-linear-gradient(
+        left,
+        #f8f9fa 2%,
+        #e6e6e6 50%,
+        #f8f9fa 98%
+      );
+      background-image: -ms-linear-gradient(
+        left,
+        #f8f9fa 2%,
+        #e6e6e6 50%,
+        #f8f9fa 98%
+      );
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right bottom,
+        color-stop(0.02, #f8f9fa),
+        color-stop(0.5, gray),
+        color-stop(0.98, #f8f9fa)
+      );
+    }
+  
+    .nav-link {
+      background-color: #f8f9fa;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  
+  #brand-mobile {
+    width: 50vw;
+    margin-left: 25vw !important;
+    text-align: center;
+  }
+  
+  .vertical-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+  }
+  #brand-mobile {
+    font-family: Lora;
+  }
+  
+  .full-menu-brand {
+    margin: 20px auto;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: Lora;
+  }
+  
+  .full-menu-brand > a {
+    text-decoration: none;
+    color: black;
+    word-spacing: 3px;
+  }
+  
+  .horizontal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0 !important;
+  }
+  
+  .large-nav-link {
+    color: black;
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 769px) {
+    .vertical-container {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    body {
+      padding-top: 0;
+    }
+    .navbar {
+      display: none;
+    }
+  }
+  
+  a.paper {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  a.paper {
+    background: linear-gradient(to right, rgb(122, 122, 122), rgb(122, 122, 122)),
+      linear-gradient(to right, rgba(24, 24, 24, 1), #7a7a7a, rgb(212, 212, 212));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+  }
+  
+  a.paper:hover {
+    background-size: 0 3px, 100% 3px;
+  }
+  
+  #page-container {
+    min-width: 100%;
+    position: relative;
+    min-height: 100vh;
+  }
+  #content-wrap {
+    min-width: 100%;
+    padding-bottom: calc(130px + 3rem); /* Footer height */
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    height: 125px;
+    margin-top: 5vw;
+    background-color: #f8f9fa;
+    padding-top: 1rem;
+    width: 100vw;
+    max-width: 100% !important;
+  }
+  
+  .footer-link {
+    margin: 0 0.5rem;
+    border-radius: 10px !important;
+  }
+  
+  @media (max-width: 769px) {
+    .footer-link {
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    html {
+      font-size: 14px;
+    }
+    #brand-mobile {
+      font-size: 1rem;
+      width: 40vw;
+      margin-left: 30vw !important;
+      text-align: center;
+      white-space: normal;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
+  
+    .navbar {
+      height: 18vw;
+      padding: 1vw 0;
+    }
+    body {
+      padding-top: 20vw;
+    }
+  
+    #page-container {
+      min-height: calc(100vh - 20vw);
+    }
+  }
+  

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+<!-- <link rel="stylesheet" href={% static "css/style.css" %}> -->
+<!-- <link rel="stylesheet" href="{% static 'export_datasets/filter_datasets.css' %}"> -->
+<link rel="stylesheet" href="{% static 'homepage/landing_page.css' %}">
+
+<title>Scalara Upload</title>
+{% endblock %}
+
+{% block content%}
+    <form method="post" enctype="multipart/form-data" style="margin: 1vw 20vw;">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+{%endblock%}
+{% block rest %}
+
+{% endblock%}
